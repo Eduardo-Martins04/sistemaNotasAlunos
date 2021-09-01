@@ -1,0 +1,69 @@
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(166, 166, 253);
+    color: #fff;
+    height: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: solid 1px black;
+}
+
+td {
+    font-size: 1.4em;
+    padding: 10px;
+}
+
+th {
+    font-size: 1.5em;
+}
+
+li {
+    font-size: 1.6em;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100%;
+}
+
+.exercicio div {
+    font-size: 1.8em;
+    border: solid 5px #fff;
+    padding: 0px 40px;
+    margin: 10px;
+}
+
+#resultado {
+    background-color: rgb(209, 127, 5);
+}
+
+.exercicio .destaque {
+    border: solid 10px greenyellow;
+    color: greenyellow;
+    font-weight: bold;
+}
+
+.capitalized {
+	text-transform: capitalize;
+}
+
+input[type="button"] {
+    padding: 15px;
+}

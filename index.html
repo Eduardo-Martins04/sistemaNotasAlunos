@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Tabela escolar</title>
+    <script src="jquery.js"></script>
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body class='conteudo exercicio'>
+        <h1>Sistema Escolar</h1>
+        
+        Aluno: <input type="text" name="" id="nome"><br>
+        Nota:<input type="number" name="" id="nota"><br>
+        <input type="button" value="Adicionar" onclick="verificaDados()">
+    </div>
+
+
+    <div id="resultado" class="capitalized"></div>
+
+    <script>
+        $('#resultado').hide()//sumindo a div resultado
+        const tabela = $('<table>')
+        const dadosT = [
+            $('<th>').append('Aluno'),
+            $('<th>').append('Nota')
+        ]
+        const linhaT = $('<tr>').append(dadosT)
+        tabela.append(linhaT)
+
+        function verificaDados(){
+            const nota = $('#nota')
+            const nome = $('#nome')
+            if(nota.val() > 10 || nota.val() == ''){
+                alert('Nota invalida! Digite novamente')
+                nota.focus()
+                nota.val('')
+            } else if(nome.val() == ''){
+                alert('Por favor escreva o nome do aluno!')
+                nome.focus()
+            } else {
+                adicionar()
+            }
+            
+        }
+
+        
+
+        let contador = 0
+        function adicionar(){
+            const nome = $('#nome')
+            const nota = $('#nota')
+            const notaFormatada = parseFloat(nota.val())
+            const linha = $('<tr>')
+                const dados = [
+                $('<td>').append(`${contador+1}) ${nome.val()}`),
+                $('<td>').append(notaFormatada.toFixed(1))
+            ] 
+
+
+            linha.append(dados)
+            tabela.append(linha)
+            nome.val('')
+            nota.val('')
+            nome.focus()
+            $('#resultado').show()
+            contador += 1
+        }
+        $('#resultado').append(tabela)
+                
+    </script>
+</body>
